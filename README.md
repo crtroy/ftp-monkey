@@ -1,6 +1,6 @@
-# FTP Monkey (PROTOTYPE)
+# FTP Monkey (Prototype)
 
-An Java FTP Client. Prototype for CS 510 Summer 2017 term project.
+A Java FTP Client. Prototype for CS 510 Summer 2017 term project.
 
 ## Overview
 
