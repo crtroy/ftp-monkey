@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ftp-monkey-proto:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ftp_monkey_proto_jar</output-path>
+    <root id="archive" name="ftp-monkey-proto.jar">
+      <element id="module-output" name="ftp-monkey-proto" />
+    </root>
+  </artifact>
+</component>
