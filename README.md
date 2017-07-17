@@ -1,6 +1,10 @@
 # FTP Monkey (PROTOTYPE)
 
-An Java FTP Client for CS 510 - Summer 2017
+An Java FTP Client. Prototype for CS 510 Summer 2017 term project.
+
+## Overview
+
+Built FTP Client using JavaFX and SceneBuilder following an MVC design pattern.
 
 ## Getting Started
 
@@ -16,7 +20,7 @@ An Java FTP Client for CS 510 - Summer 2017
 3. Run
 
 IntelliJ may prompt you to edit run configurations. Ensure the following are set correctly.
-* Main class: main.Main
+* Main class: ftpapp.FtpApp
 * Use classpath of module: {the ftp-monkey-proto directory}
 * JRE: 1.8
 

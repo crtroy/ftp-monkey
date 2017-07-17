@@ -1,8 +1,7 @@
-package main;
+package ftpapp;
 
-import action.Login;
+import model.Login;
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;

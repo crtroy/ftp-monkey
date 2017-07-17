@@ -1,13 +1,11 @@
-package action;
+package model;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 // Login contains the logic involved with connecting to an FTP server
-public class Login implements Action {
+public class Login implements Model {
 
-    @FXML
-    public TextField username;
     public boolean run() {
 
         /* TODO: Check input. Connect to server using credentials. Return true if successful
@@ -15,7 +13,6 @@ public class Login implements Action {
          */
         checkInput();
         testConnection();
-        System.out.println(username);
 
         return true;
     }

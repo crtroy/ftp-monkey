@@ -1,4 +1,4 @@
-package main;
+package ftpapp;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,11 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class FtpApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view.fxml"));
         primaryStage.setTitle("FTP Monkey");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
