@@ -1,8 +1,7 @@
 package ftpapp;
 
-import model.Login;
+import model.Session;
 import javafx.fxml.FXML;
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
@@ -21,16 +20,12 @@ public class Controller {
     @FXML
     private PasswordField password;
 
+    public Session session;
+
     @FXML
     private void loginButton(ActionEvent ae) {
-        boolean loginSuccess = false;
-        /* TODO Implement connection logic. Return true or false.
-        *  Call the login class.
-        *  */
-        Login log = new Login();
-        loginSuccess = log.run();
-        loginSuccess = true;
-        if(loginSuccess) {
+        session = new Session(username.getText(), password.getText(), host.getText(), 21);
+        if(session.login()) {
             loginStatusText.setText("Connected!");
             loginStatusCircle.setFill(Color.GREEN);
         }
