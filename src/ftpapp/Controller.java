@@ -1,11 +1,14 @@
 package ftpapp;
 
-import model.Session;
+import model.*;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import org.apache.commons.net.ftp.FTPClient;
+
+import javax.security.auth.login.LoginException;
 
 public class Controller {
 
@@ -22,9 +25,12 @@ public class Controller {
 
     public Session session;
 
+    protected FTPClient ftp;
+
     @FXML
     private void loginButton(ActionEvent ae) {
-        session = new Session(username.getText(), password.getText(), host.getText(), 21);
+        ftp = new FTPClient();
+        session = new Session(ftp, username.getText(), password.getText(), host.getText(), 21);
         if(session.login()) {
             loginStatusText.setText("Connected!");
             loginStatusCircle.setFill(Color.GREEN);
@@ -33,8 +39,11 @@ public class Controller {
 
     @FXML
     private void getButton(ActionEvent ae) {
-        /* TODO: User has clicked 'get' button. Implement logic for getting remote file.
-         *  */
+        try {
+            Get get = new Get(ftp);
+        } catch (LoginException e) {
+            /* User clicked get button but hasn't logged in */
+        }
     }
 
     @FXML

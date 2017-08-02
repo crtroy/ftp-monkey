@@ -9,8 +9,8 @@ public class Session {
 
     public boolean loginSuccess;
 
-    public Session(String username, String password, String host, int port) {
-        ftp = new FTPClient();
+    public Session(FTPClient ftp, String username, String password, String host, int port) {
+//        ftp = new FTPClient();
 
         try {
             ftp.connect(host, port);

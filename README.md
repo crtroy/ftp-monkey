@@ -1,6 +1,6 @@
-# FTP Monkey (Prototype)
+# FTP Monkey
 
-A Java FTP Client. Prototype for CS 510 Summer 2017 term project.
+A Java FTP Client. 
 
 ## Overview
 
@@ -22,11 +22,13 @@ You can build / run this project in IntelliJ or run the JAR executable.
 2. Launch IntelliJ | File Open | Select ftp-monkey-proto directory
 3. Run
 
-IntelliJ may prompt you to edit run configurations. Ensure the following are set correctly.
-* Main class: ftpapp.FtpApp
-* Use classpath of module: {the ftp-monkey-proto directory}
-* JRE: 1.8
 
+This project requires the Apache Commons Net library. You can manually install this.
+
+1. Download and unpack package
+http://mirrors.koehn.com/apache//commons/net/binaries/commons-net-3.6-bin.zip
+2. In IntelliJ | File | Project Structure | Modules | Dependencies tab | + | JARs or Directories | navigate to directory containing target jar files
+3. Leave the 'Export' box uncheck | Apply | Ok
 #### Using JAR Executable
 
 Clone repo and navigate to repo directory. Run the following command:
