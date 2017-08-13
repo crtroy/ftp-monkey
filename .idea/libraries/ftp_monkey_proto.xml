@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ftp-monkey-proto">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/ftp_monkey_proto_jar/ftp-monkey-proto.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

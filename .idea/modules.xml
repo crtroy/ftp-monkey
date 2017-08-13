@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ftp-monkey-proto.iml" filepath="$PROJECT_DIR$/ftp-monkey-proto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftp-monkey.iml" filepath="$PROJECT_DIR$/ftp-monkey.iml" />
     </modules>
   </component>
 </project>
