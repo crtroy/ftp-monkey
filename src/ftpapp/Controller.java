@@ -28,7 +28,7 @@ public class Controller {
     protected FTPClient ftp;
 
     @FXML
-    private void loginButton(ActionEvent ae) {
+    private void connectAction(ActionEvent ae) {
         ftp = new FTPClient();
         session = new Session(ftp, username.getText(), password.getText(), host.getText(), 21);
         if(session.login()) {
@@ -38,21 +38,23 @@ public class Controller {
     }
 
     @FXML
-    private void getButton(ActionEvent ae) {
-        try {
-            Get get = new Get(ftp);
-        } catch (LoginException e) {
-            /* User clicked get button but hasn't logged in */
-        }
+    private void disconnectAction(ActionEvent ae) {
+
     }
 
     @FXML
-    private void putButton(ActionEvent ae) {
-        /* TODO: Implement logic for putting local files to remote server */
+    private void downloadAction(ActionEvent ae) {
+
     }
 
     @FXML
-    private void deleteButton(ActionEvent ae) {
-        /* TODO: Impleement logic for deleting remote file */
+    private void uploadAction(ActionEvent ae) {
+
+    }
+
+
+    @FXML
+    private void deleteRemoteAction(ActionEvent ae) {
+        
     }
 }
