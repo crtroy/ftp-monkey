@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="FTP Holder">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/FTP Holder" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/FTP Holder" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/FTP Holder" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/FTP Holder" recursive="false" type="SOURCES" />
+  </library>
+</component>

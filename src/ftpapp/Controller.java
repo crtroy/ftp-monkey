@@ -55,6 +55,7 @@ public class Controller {
     private TextArea txt_log;
 
     public Session session;
+    public Get get;
 
     protected FTPClient ftp;
 
@@ -112,9 +113,10 @@ public class Controller {
         }
     }
 
-    @FXML
-    private void downloadAction(ActionEvent ae) {
 
+    @FXML
+    private void downloadAction(ActionEvent ae) throws LoginException, IOException {
+        get = new Get(ftp);
     }
 
     @FXML
