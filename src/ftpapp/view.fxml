@@ -12,16 +12,16 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="542.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftpapp.Controller">
+<VBox prefHeight="542.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftpapp.Controller">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="568.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-            <PasswordField id="txt_password" fx:id="password" layoutX="450.0" layoutY="99.0" prefHeight="22.0" prefWidth="131.0" promptText="Password">
+            <PasswordField id="txt_password" fx:id="txt_password" layoutX="450.0" layoutY="99.0" prefHeight="22.0" prefWidth="131.0" promptText="Password">
                <font>
                   <Font size="11.0" />
                </font>
             </PasswordField>
-            <TextField id="txt_username" fx:id="username" layoutX="321.0" layoutY="99.0" prefHeight="22.0" prefWidth="115.0" promptText="Username">
+            <TextField id="txt_username" fx:id="txt_username" layoutX="321.0" layoutY="99.0" prefHeight="22.0" prefWidth="115.0" promptText="Username">
                <font>
                   <Font size="11.0" />
                </font>
@@ -32,7 +32,7 @@
                </font>
             </Label>
             <Label layoutX="22.0" layoutY="100.0" />
-            <TextField id="txt_servername" fx:id="host" layoutX="44.0" layoutY="99.0" prefHeight="22.0" prefWidth="156.0" promptText="Server Name">
+            <TextField id="txt_servername" fx:id="txt_servername" layoutX="44.0" layoutY="99.0" prefHeight="22.0" prefWidth="156.0" promptText="Server Name">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
@@ -42,49 +42,49 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Circle id="circle_login_status" fx:id="loginStatusCircle" fill="#d62622" layoutX="333.0" layoutY="143.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label id="txt_login_status" fx:id="loginStatusText" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="344.0" layoutY="132.0" prefHeight="22.0" prefWidth="73.0" text="Not Connected" textFill="#050505">
+            <Circle id="circle_login_status" fx:id="circle_login_status" fill="#d62622" layoutX="333.0" layoutY="143.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label id="txt_login_status" fx:id="text_login_status" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="344.0" layoutY="132.0" prefHeight="22.0" prefWidth="73.0" text="Not Connected" textFill="#050505">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Label>
-            <Button id="btn_download" layoutX="323.0" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#getButton" prefHeight="20.0" prefWidth="264.0" text="DOWNLOAD">
+            <Button id="btn_download" fx:id="btn_download" layoutX="323.0" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#getButton" prefHeight="20.0" prefWidth="264.0" text="DOWNLOAD">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button id="btn_upload" layoutX="45.0" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#putButton" prefHeight="20.0" prefWidth="256.0" text="UPLOAD">
+            <Button id="btn_upload" fx:id="btn_upload" layoutX="45.0" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#putButton" prefHeight="20.0" prefWidth="256.0" text="UPLOAD">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button id="btn_connect" layoutX="44.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginButton" prefHeight="20.0" prefWidth="249.0" text="QUICK CONNECT">
+            <Button id="btn_connect" fx:id="btn_connect" layoutX="44.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginButton" prefHeight="20.0" prefWidth="249.0" text="QUICK CONNECT">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <ListView id="view_local" layoutX="44.0" layoutY="238.0" prefHeight="132.0" prefWidth="256.0" />
-            <TextField id="txt_port" fx:id="host1" layoutX="212.0" layoutY="99.0" prefHeight="22.0" prefWidth="80.0" promptText="Port">
+            <ListView id="view_local" fx:id="view_local" layoutX="44.0" layoutY="238.0" prefHeight="132.0" prefWidth="256.0" />
+            <TextField id="txt_port" fx:id="txt_port" layoutX="212.0" layoutY="99.0" prefHeight="22.0" prefWidth="80.0" promptText="Port">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
             </TextField>
-            <ListView id="view_remote" layoutX="323.0" layoutY="238.0" prefHeight="132.0" prefWidth="264.0" />
-            <Button id="btn_delete_remote" layoutX="538.0" layoutY="211.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteButton" prefHeight="20.0" prefWidth="50.0" text="Delete">
+            <ListView id="view_remote" fx:id="view_remote" layoutX="323.0" layoutY="238.0" prefHeight="132.0" prefWidth="264.0" />
+            <Button id="btn_delete_remote" fx:id="btn_delete_remote" layoutX="538.0" layoutY="211.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteButton" prefHeight="20.0" prefWidth="50.0" text="Delete">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
             <Label layoutX="45.0" layoutY="65.0" text="Connect" textFill="#321090" />
             <Label layoutX="44.0" layoutY="178.0" text="FTP Transfer" textFill="#321090" />
-            <Label id="label_local_path" layoutX="44.0" layoutY="215.0" text="Currrent Path: " />
+            <Label id="label_local_path" fx:id="label_local_path" layoutX="44.0" layoutY="215.0" text="Currrent Path: " />
             <Separator layoutX="134.0" layoutY="188.0" prefHeight="3.0" prefWidth="447.0" />
             <Separator layoutX="109.0" layoutY="75.0" prefHeight="3.0" prefWidth="472.0" />
-            <Label id="label_remote_path" layoutX="323.0" layoutY="214.0" text="Currrent Path: " />
+            <Label id="label_remote_path" fx:id="label_remote_path" layoutX="323.0" layoutY="214.0" text="Currrent Path: " />
             <Label layoutX="44.0" layoutY="424.0" text="Status Log" textFill="#321090" />
             <Separator layoutX="119.0" layoutY="434.0" prefHeight="3.0" prefWidth="462.0" />
-            <TextArea id="txt_log" layoutX="45.0" layoutY="458.0" prefHeight="54.0" prefWidth="538.0" />
-            <Button id="btn_disconnect" layoutX="524.0" layoutY="23.0" mnemonicParsing="false" text="Logout" />
+            <TextArea id="txt_log" fx:id="txt_log" layoutX="45.0" layoutY="458.0" prefHeight="54.0" prefWidth="538.0" />
+            <Button id="btn_disconnect" fx:id="btn_disconnect" layoutX="524.0" layoutY="23.0" mnemonicParsing="false" text="Logout" />
       </children>
     </AnchorPane>
   </children>
