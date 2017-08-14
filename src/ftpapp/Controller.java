@@ -13,15 +13,25 @@ import javax.security.auth.login.LoginException;
 public class Controller {
 
     @FXML
-    private Label loginStatusText;
+    private Circle circle_login_status;
+
     @FXML
-    private Circle loginStatusCircle;
+    private Label txt_login_status;
+
     @FXML
-    private TextField host;
+    private TextField txt_servername;
+
     @FXML
-    private TextField username;
+    private TextField txt_port;
+
     @FXML
-    private PasswordField password;
+    private TextField txt_username;
+
+    @FXML
+    private PasswordField txt_password;
+
+    @FXML
+    private Button btn_disconnect;
 
     public Session session;
 
@@ -30,16 +40,31 @@ public class Controller {
     @FXML
     private void connectAction(ActionEvent ae) {
         ftp = new FTPClient();
-        session = new Session(ftp, username.getText(), password.getText(), host.getText(), 21);
-        if(session.login()) {
-            loginStatusText.setText("Connected!");
-            loginStatusCircle.setFill(Color.GREEN);
+        try {
+            session = new Session(ftp, txt_username.getText(), txt_password.getText(), txt_servername.getText(), Integer.parseInt((txt_port.getText())));
+
+            if (session.login()) {
+                txt_login_status.setText("Connected!");
+                circle_login_status.setFill(Color.GREEN);
+            }
+        }
+        catch (Exception e) {
+
+            System.out.println("Error: Bad login credentials");
         }
     }
 
     @FXML
     private void disconnectAction(ActionEvent ae) {
-
+        try {
+            ftp.disconnect();
+            System.out.println("Disconnecting");
+            txt_login_status.setText("Not Connected");
+            circle_login_status.setFill(Color.RED);
+        }
+        catch (Exception e) {
+            System.out.println("Error: No connection to disconnect");
+        }
     }
 
     @FXML
@@ -55,6 +80,6 @@ public class Controller {
 
     @FXML
     private void deleteRemoteAction(ActionEvent ae) {
-        
+
     }
 }
