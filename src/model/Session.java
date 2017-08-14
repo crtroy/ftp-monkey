@@ -22,7 +22,8 @@ public class Session {
             System.out.println("Login successful");
             loginSuccess = true;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Exception in Session");
+            //e.printStackTrace();
         }
 
     }
