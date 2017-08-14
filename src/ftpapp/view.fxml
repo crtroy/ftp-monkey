@@ -16,27 +16,26 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="568.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-            <PasswordField id="txt_password" fx:id="txt_password" layoutX="450.0" layoutY="99.0" prefHeight="22.0" prefWidth="131.0" promptText="Password">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </PasswordField>
-            <TextField id="txt_username" fx:id="txt_username" layoutX="321.0" layoutY="99.0" prefHeight="22.0" prefWidth="115.0" promptText="Username">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </TextField>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="178.0" layoutY="22.0" prefHeight="29.0" prefWidth="286.0" text="Welcome to FTP MONKEY" textFill="#050505">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="100.0" />
             <TextField id="txt_servername" fx:id="txt_servername" layoutX="44.0" layoutY="99.0" prefHeight="22.0" prefWidth="156.0" promptText="Server Name">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
             </TextField>
+            <TextField id="txt_username" fx:id="txt_username" layoutX="321.0" layoutY="99.0" prefHeight="22.0" prefWidth="115.0" promptText="Username">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <PasswordField id="txt_password" fx:id="txt_password" layoutX="450.0" layoutY="99.0" prefHeight="22.0" prefWidth="131.0" promptText="Password">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </PasswordField>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="182.0" prefHeight="29.0" prefWidth="55.0" textFill="#050505">
                <font>
                   <Font name="System Bold" size="14.0" />
