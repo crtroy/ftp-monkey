@@ -1,5 +1,6 @@
 package test;
 
+import javafx.scene.control.TextArea;
 import model.Session;
 import org.apache.commons.net.ftp.FTPClient;
 import org.junit.Test;
@@ -16,7 +17,8 @@ public class SessionTest {
         String password = null;
         String host = null;
         int port = 0;
-        Session session = new Session(ftp, username, password, host, port);
+        TextArea txt_log = null;
+        Session session = new Session(ftp, username, password, host, port, txt_log);
 
     }
     @Test

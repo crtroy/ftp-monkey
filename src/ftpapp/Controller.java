@@ -1,5 +1,7 @@
 package ftpapp;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import model.*;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
@@ -8,7 +10,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.apache.commons.net.ftp.FTPClient;
 
-import javax.security.auth.login.LoginException;
+import java.io.IOException;
+
 
 public class Controller {
 
@@ -33,6 +36,9 @@ public class Controller {
     @FXML
     private Button btn_disconnect;
 
+    @FXML
+    private TextArea txt_log;
+
     public Session session;
 
     protected FTPClient ftp;
@@ -41,29 +47,51 @@ public class Controller {
     private void connectAction(ActionEvent ae) {
         ftp = new FTPClient();
         try {
-            session = new Session(ftp, txt_username.getText(), txt_password.getText(), txt_servername.getText(), Integer.parseInt((txt_port.getText())));
 
+            if (txt_servername.getText().isEmpty()) {
+                txt_log.appendText("Error: Server name needed\n");
+                throw new IOException();
+            }
+            if (txt_port.getText().isEmpty()) {
+                txt_log.appendText("Error: Valid port number needed\n");
+                throw new IOException();
+            }
+            if (txt_username.getText().isEmpty()) {
+                txt_log.appendText("Error: Username needed\n");
+                throw new IOException();
+            }
+            if (txt_password.getText().isEmpty()) {
+                txt_log.appendText("Error: Password needed\n");
+                throw new IOException();
+            }
+
+            session = new Session(ftp, txt_username.getText(), txt_password.getText(), txt_servername.getText(), Integer.parseInt((txt_port.getText())), txt_log);
             if (session.login()) {
                 txt_login_status.setText("Connected!");
                 circle_login_status.setFill(Color.GREEN);
             }
-        }
-        catch (Exception e) {
+        } catch (IOException e) {
 
-            System.out.println("Error: Bad login credentials");
         }
+
+//            session = new Session(ftp, "danielng", txt_password.getText(), "127.0.0.1", 21, txt_log);
+
     }
 
     @FXML
     private void disconnectAction(ActionEvent ae) {
         try {
+            if(txt_login_status.getText().equals("Not Connected")) {
+                throw new Exception();
+            }
             ftp.disconnect();
-            System.out.println("Disconnecting");
+            txt_log.appendText("Disconnected\n");
             txt_login_status.setText("Not Connected");
             circle_login_status.setFill(Color.RED);
         }
         catch (Exception e) {
-            System.out.println("Error: No connection to disconnect");
+            listenForScroll(txt_log);
+            txt_log.appendText("Error: Not connected\n");
         }
     }
 
@@ -81,5 +109,15 @@ public class Controller {
     @FXML
     private void deleteRemoteAction(ActionEvent ae) {
 
+    }
+
+    private void listenForScroll(TextArea ta) {
+        txt_log.textProperty().addListener(new ChangeListener<Object>() {
+                @Override
+                public void changed(ObservableValue<?> observable, Object oldValue,
+                                    Object newValue) {
+                    txt_log.setScrollTop(Double.MAX_VALUE);
+                }
+            });
     }
 }
